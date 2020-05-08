@@ -1,4 +1,4 @@
-# flutter_zalo_login_example
+# flutter_zalo_login
 
 Demonstrates how to use the flutter_zalo_login plugin.
 

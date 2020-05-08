@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c2711ea-3b1c-45c7-8ca3-b889a5e86c16" name="Default Changelist" comment="" />
+    <list default="true" id="6c2711ea-3b1c-45c7-8ca3-b889a5e86c16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bdHKAQgyY2XzYuPmtmVLS6EWEk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,6 +28,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -43,22 +57,22 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.m" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="925" height="292" key="GridCell.Tab.0.bottom" timestamp="1588959056769">
+    <state width="925" height="292" key="GridCell.Tab.0.bottom" timestamp="1588960071484">
       <screen x="46" y="23" width="1394" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.bottom/46.23.1394.877@46.23.1394.877" timestamp="1588959056769" />
-    <state width="925" height="292" key="GridCell.Tab.0.center" timestamp="1588959056768">
+    <state width="925" height="292" key="GridCell.Tab.0.bottom/46.23.1394.877@46.23.1394.877" timestamp="1588960071484" />
+    <state width="925" height="292" key="GridCell.Tab.0.center" timestamp="1588960071483">
       <screen x="46" y="23" width="1394" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.center/46.23.1394.877@46.23.1394.877" timestamp="1588959056768" />
-    <state width="925" height="292" key="GridCell.Tab.0.left" timestamp="1588959056767">
+    <state width="925" height="292" key="GridCell.Tab.0.center/46.23.1394.877@46.23.1394.877" timestamp="1588960071483" />
+    <state width="925" height="292" key="GridCell.Tab.0.left" timestamp="1588960071482">
       <screen x="46" y="23" width="1394" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.left/46.23.1394.877@46.23.1394.877" timestamp="1588959056767" />
-    <state width="925" height="292" key="GridCell.Tab.0.right" timestamp="1588959056768">
+    <state width="925" height="292" key="GridCell.Tab.0.left/46.23.1394.877@46.23.1394.877" timestamp="1588960071482" />
+    <state width="925" height="292" key="GridCell.Tab.0.right" timestamp="1588960071483">
       <screen x="46" y="23" width="1394" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.right/46.23.1394.877@46.23.1394.877" timestamp="1588959056768" />
+    <state width="925" height="292" key="GridCell.Tab.0.right/46.23.1394.877@46.23.1394.877" timestamp="1588960071483" />
     <state x="398" y="225" width="689" height="472" key="find.popup" timestamp="1588955613228">
       <screen x="46" y="23" width="1394" height="877" />
     </state>
