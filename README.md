@@ -12,8 +12,8 @@
 
 
 <div align="center">
-  <img src="./login_zalo_ios.gif" style="margin-right: 30px;" />
-  <img src="./login_zalo_android.gif" />
+  <img width="320px" src="./login_zalo_ios.gif" style="margin-right: 16px;" />
+  <img width="320px" src="./login_zalo_android.gif" />
 </div>
 
 

@@ -1,3 +1,7 @@
+## 0.1.2
+
+* [Thien] add auth code func update readme.md
+
 ## 0.1.1
 
 * Fix login by app on IOS not return result.
