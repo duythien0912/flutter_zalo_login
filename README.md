@@ -25,6 +25,34 @@ dependencies:
   flutter_zalo_login:
 ```
 
+# Usage
+
+Call init function on initState
+```dart
+ZaloLogin().init();
+```
+
+Login function return type https://pub.dev/documentation/flutter_zalo_login/latest/flutter_zalo_login/ZaloLoginResult-class.html
+```dart
+ZaloLoginResult res = await ZaloLogin().logIn();
+```
+
+Check is authenticated
+```dart
+bool isAuthenticated = await ZaloLogin().isAuthenticated();
+```
+
+Logout
+```dart
+await ZaloLogin().logOut();
+```
+
+Get info from user return type https://pub.dev/documentation/flutter_zalo_login/latest/flutter_zalo_login/ZaloProfileModel-class.html
+```dart
+ZaloProfileModel info = await ZaloLogin().getInfo();
+```
+
+
 # Setup Zalo developers
 
 Go to this page: https://developers.zalo.me/app

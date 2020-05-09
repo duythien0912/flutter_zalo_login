@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _loginZalo() async {
     print(await ZaloLogin.channel.invokeMethod('getPlatformVersion'));
 
-    var res = await ZaloLogin().logIn();
+    ZaloLoginResult res = await ZaloLogin().logIn();
     setState(() {
       zaloLoginResult = res;
     });
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _getInfo() async {
-    var info = await ZaloLogin().getInfo();
+    ZaloProfileModel info = await ZaloLogin().getInfo();
     setState(() {
       zaloInfo = info;
     });
