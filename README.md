@@ -1,14 +1,149 @@
-# flutter_zalo_login_example
+<h1 align="center">
+  <div>
+    <img src="./flutter.jpeg" height="150" />
+    <img src="./zalo.svg" width="150" height="150" />
+  </div>
 
-Demonstrates how to use the flutter_zalo_login plugin.
+  <div>
+  
+  Flutter Zalo Login 
+  </div>
+</h1>
 
-## Setup Android
+
+<div align="center">
+  <img src="./login_zalo_ios.gif" style="margin-right: 30px;" />
+  <img src="./login_zalo_android.gif" />
+</div>
+
+
+# Installation
+Add this to your package's pubspec.yaml file:
+
+```yaml
+dependencies:
+  flutter_zalo_login:
+```
+
+# Setup Zalo developers
+
+Go to this page: https://developers.zalo.me/app
+
+Login and create new app
+
+It will have 2 value
+
+ID: `<YOUR_ZALO_APP_ID>`
+
+Secret Key: `<YOUR_ZALO_APP_SECRET_KEY>`
+
+> # Note
+
+> ## Android will need your `<YOUR_ZALO_APP_ID>` and `Hash Key`
+> Hash Key will be show on console log when you run `ZaloLogin().init();` like below
+
+```bash
+V/ZaloLogin(28268): Please add this Hash Key to Zalo developers dashboard for Login
+V/ZaloLogin(28268): tUDfvw+YYoyciFpRM4WIRYeqtRI=
+```
+
+> ## IOS will need both <YOUR_ZALO_APP_ID> and `<YOUR_ZALO_APP_SECRET_KEY>`
+
+After that config your BundleID, Package name, Hash key on zalo develop config
+
+<div align="center">
+  <img src="./config.png" />
+</div>
+
+
+# IOS
+
+Open `/ios/Runner/Info.plist` and add the following:
+
+```plist
+    ...
+    <key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>zalo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>zalo-<YOUR_ZALO_APP_ID></string>
+			</array>
+		</dict>
+	</array>
+	<key>ZaloAppID</key>
+	<string><YOUR_ZALO_APP_ID></string>
+	<key>ZaloAppKey</key>
+	<string><YOUR_ZALO_APP_SECRET_KEY></string>
+    ...
+```
+
+After that, open `ios/Runner/AppDelegate.swift` and add code below: 
+
+```swift
+    ...
+    override func application(
+        _ application: UIApplication,
+        open url: URL,
+        sourceApplication: String?,
+        annotation: Any
+    ) -> Bool {
+        return ZDKApplicationDelegate.sharedInstance().application(application,
+            open: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation
+        )
+    }
+
+    @available(iOS 9.0, *)
+    override func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+        return ZDKApplicationDelegate
+            .sharedInstance()
+            .application(app,
+                            open: url as URL?,
+                            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?,
+                            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+        return false
+    }
+
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        GeneratedPluginRegistrant.register(with: self)
+
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+
+```
+
+If your project using Object-c add code to follow file `ios/Runner/AppDelegate.m`:
+```objc
+
+...
+
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
+  return [[ZDKApplicationDelegate sharedInstance] application:application openURL:url options:options];
+}
+```
+
+# Android
+### Note this plugin need config
 
 ```
 minSdkVersion 18
 ```
 
-Add to /android/app/src/main/AndroidManifest.xml
+### Open to `/android/app/src/main/AndroidManifest.xml` and add config
 ```xml
     <application
         android:name=".FlutterApplication" 
@@ -34,18 +169,17 @@ Add to /android/app/src/main/AndroidManifest.xml
     </application>
 ```
 
-
-Create new file /android/app/src/main/res/values/string.xml
+### After that create new file `/android/app/src/main/res/values/string.xml`
 ```xml
 <resources>
     <string name="app_name">zaa2</string>
-    <string name="appID">2025844058438788512</string>
-    <string name="zalosdk_app_id">2025844058438788512</string>
-    <string name="zalosdk_login_protocol_schema">zalo-2025844058438788512</string>
+    <string name="appID"><YOUR_ZALO_APP_ID></string>
+    <string name="zalosdk_app_id"><YOUR_ZALO_APP_ID></string>
+    <string name="zalosdk_login_protocol_schema">zalo-<YOUR_ZALO_APP_ID></string>
 </resources>
 ```
 
-Create new file /android/app/src/main/java/com/neun/flutter_zalo_login/flutter_zalo_login_example/FlutterApplication.java
+### Create new file `/android/app/src/main/java/com/neun/flutter_zalo_login/flutter_zalo_login_example/FlutterApplication.java`
 
 ```java
 package com.neun.flutter_zalo_login.flutter_zalo_login_example;
@@ -78,9 +212,9 @@ public class FlutterApplication extends Application {
 }
 ```
 
-Edit file MainActivity
+After that edit file `MainActivity`
 
-If kotlin
+If `Kotlin`
 ```kotlin
     import com.zing.zalo.zalosdk.oauth.ZaloSDK;
 
@@ -90,7 +224,7 @@ If kotlin
     }
 ```
 
-If java
+If `Java`
 ```java
     import com.zing.zalo.zalosdk.oauth.ZaloSDK;
 
@@ -101,27 +235,3 @@ If java
     }
 ```
 
-
-## Setup IOS
-
-Add to /ios/Runner/Info.plist
-
-```.plist
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>zalo</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>zalo-2025844058438788512</string>
-			</array>
-		</dict>
-	</array>
-	<key>ZaloAppID</key>
-	<string>2025844058438788512</string>
-	<key>ZaloAppKey</key>
-	<string>bhyoUXT7H8043XM2eXJ1</string>
-```

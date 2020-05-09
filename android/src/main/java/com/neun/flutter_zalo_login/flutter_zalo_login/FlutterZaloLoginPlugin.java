@@ -113,6 +113,17 @@ public class FlutterZaloLoginPlugin implements FlutterPlugin, MethodCallHandler,
                     _result.success(result);
                 }
             });
+        } else if (call.method.equals("isAuthenticated")) {
+            _mSDk.isAuthenticate(new ValidateOAuthCodeCallback() {
+                @Override
+                public void onValidateComplete(boolean validated, int errorCode, long userId, String oauthCode) {
+                    if(validated) {
+                        _result.success(1);
+                    } else {
+                        _result.success(0);
+                    }
+                }
+            });
         } else if (call.method.equals("logOut")) {
             _mSDk.unauthenticate();
 

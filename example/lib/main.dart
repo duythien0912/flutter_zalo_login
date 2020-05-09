@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_zalo_login/flutter_zalo_login.dart';
 
@@ -22,13 +24,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  ZaloLoginResult zaloLoginResult;
-  ZaloProfileModel zaloInfo;
+  ZaloLoginResult zaloLoginResult = ZaloLoginResult(
+    errorCode: -1,
+    errorMessage: "",
+    oauthCode: "",
+    userId: "",
+  );
+  ZaloProfileModel zaloInfo = ZaloProfileModel(
+    birthday: "",
+    gender: "",
+    id: "",
+    name: "",
+    picture: null,
+  );
+  bool _authenticated = false;
 
   @override
   void initState() {
     super.initState();
-    ZaloLogin.channel.invokeMethod('init');
+    ZaloLogin().init();
   }
 
   void _loginZalo() async {
@@ -39,6 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
       zaloLoginResult = res;
     });
     print(res);
+  }
+
+  void _isAuthenticated() async {
+    bool isAuthenticated = await ZaloLogin().isAuthenticated();
+    print(isAuthenticated);
+    setState(() {
+      _authenticated = isAuthenticated;
+    });
   }
 
   void _logoutZalo() async {
@@ -66,33 +88,118 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
-              child: Text("Đăng nhập bằng Zalo"),
-              onPressed: _loginZalo,
-              color: Theme.of(context).primaryColor,
+            Divider(),
+            Row(
+              children: <Widget>[
+                VerticalDivider(),
+                SizedBox(
+                  child: FlatButton(
+                    child: Text(
+                      "Login Zalo",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: _loginZalo,
+                    color: Theme.of(context).accentColor,
+                  ),
+                  width: 150,
+                ),
+                VerticalDivider(),
+                if (zaloLoginResult != null)
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "oauthCode: " + zaloLoginResult.oauthCode.toString(),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                        ),
+                        Text("errorCode: " +
+                            zaloLoginResult.errorCode.toString()),
+                        Text("userId: " + zaloLoginResult.userId),
+                      ],
+                    ),
+                  ),
+              ],
             ),
-            FlatButton(
-              child: Text("get info"),
-              onPressed: _getInfo,
-              color: Theme.of(context).accentColor,
+            Divider(),
+            Row(
+              children: <Widget>[
+                VerticalDivider(),
+                SizedBox(
+                  width: 150,
+                  child: FlatButton(
+                    child: Text(
+                      "Is Authenticated",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: _isAuthenticated,
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
+                VerticalDivider(),
+                Expanded(
+                  child: Text(
+                    "Is Authenticated: " + _authenticated.toString(),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+              ],
             ),
-            FlatButton(
-              child: Text("Đăng xuất"),
-              onPressed: _logoutZalo,
-              color: Theme.of(context).buttonColor,
+            Divider(),
+            Row(
+              children: <Widget>[
+                VerticalDivider(),
+                SizedBox(
+                  width: 150,
+                  child: FlatButton(
+                    child: Text(
+                      "Get info",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: _getInfo,
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
+                VerticalDivider(),
+                if (zaloInfo != null)
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        if (zaloInfo != null && zaloInfo.picture != null)
+                          Image.network(zaloInfo.picture.data.url),
+                        Text(
+                          "id: " + zaloInfo?.id,
+                        ),
+                        Text(
+                          "name: " + zaloInfo?.name,
+                        ),
+                        Text(
+                          "birthday: " + zaloInfo?.birthday,
+                        ),
+                        Text(
+                          "gender: " + zaloInfo?.gender,
+                        ),
+                      ],
+                    ),
+                  )
+              ],
             ),
-            Text(
-              'Zalo info:',
+            Divider(),
+            Row(
+              children: <Widget>[
+                VerticalDivider(),
+                SizedBox(
+                  width: 150,
+                  child: FlatButton(
+                    child: Text("Logout"),
+                    onPressed: _logoutZalo,
+                    color: Theme.of(context).buttonColor,
+                  ),
+                ),
+              ],
             ),
-            if (zaloLoginResult != null)
-              Text(
-                zaloLoginResult.toJson().toString(),
-              ),
-            if (zaloInfo != null)
-              Text(
-                zaloInfo.toJson().toString(),
-              ),
-            if (zaloInfo != null && zaloInfo.picture != null ) Image.network(zaloInfo.picture.data.url),
           ],
         ),
       ),

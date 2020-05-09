@@ -17,6 +17,8 @@
         [self init:result];
     } else if ([@"logIn" isEqualToString:call.method]) {
         [self logIn:result];
+    } else if ([@"isAuthenticated" isEqualToString:call.method]) {
+        [self isAuthenticated:result];
     } else if ([@"logOut" isEqualToString:call.method]) {
         [self logOut:result];
     } else if ([@"getInfo" isEqualToString:call.method]) {
@@ -74,6 +76,18 @@
                                    details:exception.reason]);
     }
 
+}
+
+- (void)isAuthenticated:(FlutterResult)result {
+    [[ZaloSDK sharedInstance] isAuthenticatedZaloWithCompletionHandler:
+     ^(ZOOauthResponseObject *response) {
+
+        if(response.errorCode == kZaloSDKErrorCodeNoneError) {
+            result([NSNumber numberWithInt:1]);
+        } else {
+            result([NSNumber numberWithInt:0]);
+        }
+    }];
 }
 
 - (void)logOut:(FlutterResult)result {

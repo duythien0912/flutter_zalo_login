@@ -8,30 +8,6 @@ class ZaloLogin {
 
   Future init() async {
     final dynamic result = await channel.invokeMethod('init');
-
-    channel.setMethodCallHandler((MethodCall call) {
-      switch (call.method) {
-        case 'loginSuccess':
-          print("loginSuccess");
-          print(call.arguments);
-          return null;
-        case 'loginError':
-          print("loginError");
-          print(call.arguments);
-          return null;
-        case 'getUserSuccess':
-          print("getUserSuccess");
-          print(call.arguments);
-          return null;
-        case 'getUserError':
-          print("getUserError");
-          print(call.arguments);
-          return null;
-        default:
-          throw new MissingPluginException();
-      }
-    });
-
     return result;
   }
 
@@ -42,6 +18,9 @@ class ZaloLogin {
   }
 
   Future<void> logOut() async => channel.invokeMethod('logOut');
+
+  Future<bool> isAuthenticated() async =>
+      await channel.invokeMethod('isAuthenticated') == 1;
 
   Future<ZaloProfileModel> getInfo() async {
     final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
