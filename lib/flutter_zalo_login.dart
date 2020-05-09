@@ -38,7 +38,7 @@ class ZaloLogin {
   Future<ZaloLoginResult> logIn() async {
     final Map<dynamic, dynamic> result = await channel.invokeMethod('logIn');
 
-    return ZaloLoginResult.fromJson(result);
+    return ZaloLoginResult.fromJson(result ?? {});
   }
 
   Future<void> logOut() async => channel.invokeMethod('logOut');
@@ -46,7 +46,7 @@ class ZaloLogin {
   Future<ZaloProfileModel> getInfo() async {
     final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
 
-    return ZaloProfileModel.fromJson(result);
+    return ZaloProfileModel.fromJson(result ?? {});
   }
 }
 

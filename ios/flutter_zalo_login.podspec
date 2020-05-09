@@ -16,7 +16,7 @@ A new Flutter project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'ZaloSDK', '~> 2.5'
+  s.dependency "ZaloSDK"
   s.static_framework = true
   s.ios.deployment_target = '9.0'
   s.platform = :ios, '8.0'

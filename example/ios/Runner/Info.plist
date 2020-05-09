@@ -58,5 +58,7 @@
 	<string>2025844058438788512</string>
 	<key>ZaloAppKey</key>
 	<string>bhyoUXT7H8043XM2eXJ1</string>
+    <key>io.flutter.embedded_views_preview</key>
+    <true/>
 </dict>
 </plist>

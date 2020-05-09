@@ -28,7 +28,7 @@
 
 - (void)init:(FlutterResult)result {
         NSString *zaloAppID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ZaloAppID"];
-        NSLog(zaloAppID);
+        NSLog(@"%@", zaloAppID);
         [[ZaloSDK sharedInstance] initializeWithAppId:zaloAppID];
         result([NSNumber numberWithInt:1]);
 }
@@ -40,30 +40,30 @@
                 [UIApplication sharedApplication].delegate.window.rootViewController;
 
         [[ZaloSDK sharedInstance] authenticateZaloWithAuthenType:ZAZAloSDKAuthenTypeViaZaloAppAndWebView
-                                                parentController:rootViewController
-                                                         handler:^(ZOOauthResponseObject *response) {
-                                                             if ([response isSucess]) {
-                                                                 NSString *errorCode = [NSString stringWithFormat:@"%ld", (long) response.errorCode];
+                                  parentController:rootViewController
+                                  handler:^(ZOOauthResponseObject *response) {
+                                    if ([response isSucess]) {
+                                        NSString *errorCode = [NSString stringWithFormat:@"%ld", (long) response.errorCode];
 
-                                                                 result(@{
-                                                                         @"userId": response.userId ?: [NSNull null],
-                                                                         @"oauthCode": response.oauthCode ?: [NSNull null],
-                                                                         @"errorCode": [NSNumber numberWithInt:response.errorCode] ?: [NSNull null],
-                                                                         @"errorMessage": response.errorMessage ?: [NSNull null],
-                                                                         @"displayName": response.displayName ?: [NSNull null],
-                                                                         @"dob": response.dob ?: [NSNull null],
-                                                                         @"gender": response.gender ?: [NSNull null],
-                                                                 });
-                                                             } else if (response.errorCode != kZaloSDKErrorCodeUserCancel) {
-                                                                 NSString *errorCode = [NSString stringWithFormat:@"%ld", (long) response.errorCode];
-                                                                 NSString *message = response.errorMessage;
+                                        result(@{
+                                            @"userId": response.userId ?: [NSNull null],
+                                            @"oauthCode": response.oauthCode ?: [NSNull null],
+                                            @"errorCode": [NSNumber numberWithInt:response.errorCode] ?: [NSNull null],
+                                            @"errorMessage": response.errorMessage ?: [NSNull null],
+                                            @"displayName": response.displayName ?: [NSNull null],
+                                            @"dob": response.dob ?: [NSNull null],
+                                            @"gender": response.gender ?: [NSNull null],
+                                        });
+                                    } else if (response.errorCode != kZaloSDKErrorCodeUserCancel) {
+                                        NSString *errorCode = [NSString stringWithFormat:@"%ld", (long) response.errorCode];
+                                        NSString *message = response.errorMessage;
 
-                                                                 result(@{
-                                                                         @"errorCode": errorCode ?: [NSNull null],
-                                                                         @"errorMessage": message ?: [NSNull null],
-                                                                 });
-                                                             }
-                                                         }];
+                                        result(@{
+                                            @"errorCode": errorCode ?: [NSNull null],
+                                            @"errorMessage": message ?: [NSNull null],
+                                        });
+                                    }
+                                  }];
     }
     @catch (NSException *exception) {
         NSLog(@"Login error");

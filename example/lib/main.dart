@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Text(
                 zaloInfo.toJson().toString(),
               ),
-            if (zaloInfo != null) Image.network(zaloInfo.picture.data.url),
+            if (zaloInfo != null && zaloInfo.picture != null ) Image.network(zaloInfo.picture.data.url),
           ],
         ),
       ),
