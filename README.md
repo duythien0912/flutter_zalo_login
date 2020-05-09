@@ -1,7 +1,7 @@
 <h1 align="center">
   <div>
-    <img src="./flutter.jpeg" height="150" />
-    <img src="./zalo.svg" width="150" height="150" />
+    <img src="https://raw.githubusercontent.com/duythien0912/flutter_zalo_login/master/flutter.jpeg" height="150" />
+    <img src="https://raw.githubusercontent.com/duythien0912/flutter_zalo_login/master/zalo.svg" width="150" height="150" />
   </div>
 
   <div>
@@ -12,8 +12,8 @@
 
 
 <div align="center">
-  <img width="320px" src="./login_zalo_ios.gif" style="margin-right: 16px;" />
-  <img width="320px" src="./login_zalo_android.gif" />
+  <img width="320px" src="https://raw.githubusercontent.com/duythien0912/flutter_zalo_login/master/login_zalo_ios.gif" style="margin-right: 16px;" />
+  <img width="320px" src="https://raw.githubusercontent.com/duythien0912/flutter_zalo_login/master/login_zalo_android.gif" />
 </div>
 
 
@@ -94,7 +94,7 @@ V/ZaloLogin(28268): tUDfvw+YYoyciFpRM4WIRYeqtRI=
 After that config your BundleID, Package name, Hash key on zalo develop config
 
 <div align="center">
-  <img src="./config.png" />
+  <img src="https://raw.githubusercontent.com/duythien0912/flutter_zalo_login/master/config.png" />
 </div>
 
 
