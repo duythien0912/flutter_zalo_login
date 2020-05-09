@@ -47,7 +47,7 @@ V/ZaloLogin(28268): Please add this Hash Key to Zalo developers dashboard for Lo
 V/ZaloLogin(28268): tUDfvw+YYoyciFpRM4WIRYeqtRI=
 ```
 
-> ## IOS will need both <YOUR_ZALO_APP_ID> and `<YOUR_ZALO_APP_SECRET_KEY>`
+> ## IOS will need both `<YOUR_ZALO_APP_ID>` and `<YOUR_ZALO_APP_SECRET_KEY>`
 
 After that config your BundleID, Package name, Hash key on zalo develop config
 
@@ -60,7 +60,7 @@ After that config your BundleID, Package name, Hash key on zalo develop config
 
 Open `/ios/Runner/Info.plist` and add the following:
 
-```plist
+```
     ...
     <key>CFBundleURLTypes</key>
 	<array>
