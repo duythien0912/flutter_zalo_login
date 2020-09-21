@@ -54,8 +54,9 @@ await ZaloLogin().logOut();
 ```
 
 Get info from user return type https://pub.dev/documentation/flutter_zalo_login/latest/flutter_zalo_login/ZaloProfileModel-class.html
-| Properties        | Type      
-| ------------- |:-------------:|
+
+| Properties | Type |   
+| :-------------: |:-------------:|
 | id      | String |
 | name      | String |
 | birthday      | String |
