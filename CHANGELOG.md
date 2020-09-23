@@ -1,3 +1,11 @@
+## 0.1.4
+
+* [Thien] Update readme.md
+
+## 0.1.3
+
+* [Thien] Update readme.md
+
 ## 0.1.2
 
 * [Thien] add auth code func update readme.md

@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c2711ea-3b1c-45c7-8ca3-b889a5e86c16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/neun/flutter_zalo_login/flutter_zalo_login/FlutterZaloLoginPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/neun/flutter_zalo_login/flutter_zalo_login/FlutterZaloLoginPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/flutter_zalo_login.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_zalo_login/flutter_zalo_login.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_zalo_login.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_zalo_login.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/FlutterZaloLoginPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FlutterZaloLoginPlugin.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_zalo_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_zalo_login.dart" afterDir="false" />
-    </list>
+    <list default="true" id="6c2711ea-3b1c-45c7-8ca3-b889a5e86c16" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,25 +48,25 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.m" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="925" height="289" key="GridCell.Tab.0.bottom" timestamp="1589018622529">
-      <screen x="46" y="23" width="1394" height="877" />
+    <state width="925" height="289" key="GridCell.Tab.0.bottom" timestamp="1589029095881">
+      <screen x="43" y="23" width="1397" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.bottom/43.23.1397.877@43.23.1397.877" timestamp="1589013425932" />
+    <state width="925" height="289" key="GridCell.Tab.0.bottom/43.23.1397.877@43.23.1397.877" timestamp="1589029095881" />
     <state width="925" height="289" key="GridCell.Tab.0.bottom/46.23.1394.877@46.23.1394.877" timestamp="1589018622529" />
-    <state width="925" height="289" key="GridCell.Tab.0.center" timestamp="1589018622528">
-      <screen x="46" y="23" width="1394" height="877" />
+    <state width="925" height="289" key="GridCell.Tab.0.center" timestamp="1589029095880">
+      <screen x="43" y="23" width="1397" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.center/43.23.1397.877@43.23.1397.877" timestamp="1589013425931" />
+    <state width="925" height="289" key="GridCell.Tab.0.center/43.23.1397.877@43.23.1397.877" timestamp="1589029095880" />
     <state width="925" height="289" key="GridCell.Tab.0.center/46.23.1394.877@46.23.1394.877" timestamp="1589018622528" />
-    <state width="925" height="289" key="GridCell.Tab.0.left" timestamp="1589018622528">
-      <screen x="46" y="23" width="1394" height="877" />
+    <state width="925" height="289" key="GridCell.Tab.0.left" timestamp="1589029095879">
+      <screen x="43" y="23" width="1397" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.left/43.23.1397.877@43.23.1397.877" timestamp="1589013425930" />
+    <state width="925" height="289" key="GridCell.Tab.0.left/43.23.1397.877@43.23.1397.877" timestamp="1589029095879" />
     <state width="925" height="289" key="GridCell.Tab.0.left/46.23.1394.877@46.23.1394.877" timestamp="1589018622528" />
-    <state width="925" height="289" key="GridCell.Tab.0.right" timestamp="1589018622529">
-      <screen x="46" y="23" width="1394" height="877" />
+    <state width="925" height="289" key="GridCell.Tab.0.right" timestamp="1589029095881">
+      <screen x="43" y="23" width="1397" height="877" />
     </state>
-    <state width="925" height="292" key="GridCell.Tab.0.right/43.23.1397.877@43.23.1397.877" timestamp="1589013425931" />
+    <state width="925" height="289" key="GridCell.Tab.0.right/43.23.1397.877@43.23.1397.877" timestamp="1589029095881" />
     <state width="925" height="289" key="GridCell.Tab.0.right/46.23.1394.877@46.23.1394.877" timestamp="1589018622529" />
     <state x="46" y="100" key="SettingsEditor" timestamp="1589005102853">
       <screen x="46" y="23" width="1394" height="877" />
