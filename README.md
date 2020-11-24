@@ -174,8 +174,6 @@ and change YOUR_ZALO_APP_ID to your app_id
 
 :warning: Replace package your.app.name with your app's package name. If you don't know your package name, you can find it at the 1st line in MainActivity.kt.
 
-For MyApplication.kt, use the following:
-
 ```kt
 package your.app.name;  // <-- replace this
 
@@ -252,9 +250,9 @@ Same with `4. Setup for Android Kotlin`
 Check folder `example/android` for java code version of
 `MyApplication.kt` and `MainActivity.kt`
 
-# Setup for iOS
+# 6. Setup for iOS
 
-Open `/ios/Runner/Info.plist` and add the following:
+## 6.1 Open `/ios/Runner/Info.plist` and add the following:
 
 ```
     ...
@@ -278,7 +276,7 @@ Open `/ios/Runner/Info.plist` and add the following:
     ...
 ```
 
-After that, open `ios/Runner/AppDelegate.swift` and add code below:
+## 6.2 After that, open `ios/Runner/AppDelegate.swift` and add code below:
 
 ```swift
     ...
@@ -322,7 +320,7 @@ After that, open `ios/Runner/AppDelegate.swift` and add code below:
 
 ```
 
-If your project using Object-c add code to follow file `ios/Runner/AppDelegate.m`:
+## 6.3 If your project using Object-c add code to follow file `ios/Runner/AppDelegate.m`:
 
 ```objc
 

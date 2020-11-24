@@ -1,3 +1,7 @@
+## 0.1.6
+
+* [Thien] Add kotlin code example
+
 ## 0.1.5
 
 * [Thien] Fix android update format on pubspec
