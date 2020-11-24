@@ -90,11 +90,11 @@ Secret Key: `YOUR_ZALO_APP_SECRET_KEY`
 
 ## 3.1 :warning: Note
 
-> ## IOS will need `YOUR_ZALO_APP_ID` and `YOUR_ZALO_APP_SECRET_KEY`
+> IOS will need `YOUR_ZALO_APP_ID` and `YOUR_ZALO_APP_SECRET_KEY`
 
-> ## Android will need `YOUR_ZALO_APP_ID` and `Hash Key`
->
-> Hash Key will be show on console log when you run `ZaloLogin().init();` like below
+> Android will need `YOUR_ZALO_APP_ID` and `Hash Key`
+
+Android Hash Key will be show on console log when you run `ZaloLogin().init();` like below
 
 ```bash
 V/ZaloLogin(28932): ---------------------------------------------------------------------------
