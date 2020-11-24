@@ -1,3 +1,7 @@
+## 0.1.8
+
+* [Thien] Fix bug ZaloSDK.Instance.authenticate not respones
+
 ## 0.1.7
 
 * [Thien] Fix bug on android
