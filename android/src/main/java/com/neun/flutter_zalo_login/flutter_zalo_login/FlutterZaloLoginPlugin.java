@@ -92,7 +92,7 @@ public class FlutterZaloLoginPlugin implements FlutterPlugin, MethodCallHandler,
             _result.success(hashkey);
         } else if (call.method.equals("logIn")) {
             _mSDk.unauthenticate();
-            _mSDk.authenticate(_activity, LoginVia.APP_OR_WEB, new OAuthCompleteListener() {
+            OAuthCompleteListener listener = new OAuthCompleteListener() {
                 @Override
                 public void onGetOAuthComplete(OauthResponse response) {
                     Map<String, Object> result = new HashMap<>();
@@ -114,7 +114,8 @@ public class FlutterZaloLoginPlugin implements FlutterPlugin, MethodCallHandler,
 
                     _result.success(result);
                 }
-            });
+            };
+            _mSDk.authenticate(_activity, LoginVia.APP_OR_WEB, listener);
         } else if (call.method.equals("isAuthenticated")) {
             _mSDk.isAuthenticate(new ValidateOAuthCodeCallback() {
                 @Override
@@ -137,10 +138,8 @@ public class FlutterZaloLoginPlugin implements FlutterPlugin, MethodCallHandler,
                 public void onResult(JSONObject response) {
                     try {
                         Map<String, Object> result = jsonToMap(response);
-
                         _result.success(result);
                     } catch (JSONException e) {
-
                         _result.success("Get Info error");
                     }
                 }
