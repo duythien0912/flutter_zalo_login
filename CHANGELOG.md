@@ -1,3 +1,7 @@
+## 0.1.5
+
+* [Thien] Fix android update format on pubspec
+
 ## 0.1.4
 
 * [Thien] Update readme.md

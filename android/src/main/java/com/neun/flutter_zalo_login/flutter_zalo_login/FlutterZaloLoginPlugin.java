@@ -84,8 +84,10 @@ public class FlutterZaloLoginPlugin implements FlutterPlugin, MethodCallHandler,
             _result.success("Android " + android.os.Build.VERSION.RELEASE);
         } else if (call.method.equals("init")) {
             String hashkey = getApplicationHashKey(_context);
-            Log.v(LOG_TAG, "Please add this Hash Key to Zalo developers dashboard for Login");
+            Log.v(LOG_TAG, "---------------------------------------------------------------------------");
+            Log.v(LOG_TAG, "|     Please add this Hash Key to Zalo developers dashboard for Login     |");
             Log.v(LOG_TAG, hashkey);
+            Log.v(LOG_TAG, "---------------------------------------------------------------------------");
 
             _result.success(hashkey);
         } else if (call.method.equals("logIn")) {

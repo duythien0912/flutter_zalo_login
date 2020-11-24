@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Neun</string>
+    <string name="appID">3074575847785381944</string>
+    <string name="zalosdk_app_id">3074575847785381944</string>
+    <string name="zalosdk_login_protocol_schema">zalo-3074575847785381944</string>
+</resources>

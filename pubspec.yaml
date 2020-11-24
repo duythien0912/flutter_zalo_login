@@ -1,6 +1,6 @@
 name: flutter_zalo_login
 description: A Flutter plugin for allowing users to authenticate with native Android &amp; iOS Zalo login SDKs.
-version: 0.1.4
+version: 0.1.5
 homepage: https://github.com/duythien0912/flutter_zalo_login
 
 environment:
@@ -27,7 +27,7 @@ flutter:
   plugin:
     platforms:
       android:
-        androidPackage: com.neun.flutter_zalo_login.flutter_zalo_login
+        package: com.neun.flutter_zalo_login.flutter_zalo_login
         pluginClass: FlutterZaloLoginPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
