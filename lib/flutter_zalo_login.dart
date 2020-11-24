@@ -19,18 +19,17 @@ class ZaloLogin {
 
   Future<void> logOut() async => channel.invokeMethod('logOut');
 
-  Future<bool> isAuthenticated() async =>
-      await channel.invokeMethod('isAuthenticated') == 1;
+  Future<bool> isAuthenticated() async => await channel.invokeMethod('isAuthenticated') == 1;
 
   Future<ZaloProfileModel> getInfo() async {
+    final Map<dynamic, dynamic> _result = await channel.invokeMethod('getInfo');
     final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
 
     return ZaloProfileModel.fromJson(result ?? {});
   }
 }
 
-ZaloLoginResult authorPostsFromJson(String str) =>
-    ZaloLoginResult.fromJson(json.decode(str));
+ZaloLoginResult authorPostsFromJson(String str) => ZaloLoginResult.fromJson(json.decode(str));
 
 String authorPostsToJson(ZaloLoginResult data) => json.encode(data.toJson());
 
@@ -60,11 +59,9 @@ class ZaloLoginResult {
         userId: userId ?? this.userId,
       );
 
-  factory ZaloLoginResult.fromJson(Map<dynamic, dynamic> json) =>
-      ZaloLoginResult(
+  factory ZaloLoginResult.fromJson(Map<dynamic, dynamic> json) => ZaloLoginResult(
         oauthCode: json["oauthCode"] == null ? null : json["oauthCode"],
-        errorMessage:
-            json["errorMessage"] == null ? null : json["errorMessage"],
+        errorMessage: json["errorMessage"] == null ? null : json["errorMessage"],
         errorCode: json["errorCode"] == null ? null : json["errorCode"],
         userId: json["userId"] == null ? null : json["userId"].toString(),
       );
@@ -77,11 +74,9 @@ class ZaloLoginResult {
       };
 }
 
-ZaloProfileModel zaloProfileModelFromJson(String str) =>
-    ZaloProfileModel.fromJson(json.decode(str));
+ZaloProfileModel zaloProfileModelFromJson(String str) => ZaloProfileModel.fromJson(json.decode(str));
 
-String zaloProfileModelToJson(ZaloProfileModel data) =>
-    json.encode(data.toJson());
+String zaloProfileModelToJson(ZaloProfileModel data) => json.encode(data.toJson());
 
 class ZaloProfileModel {
   String birthday;
@@ -113,14 +108,12 @@ class ZaloProfileModel {
         picture: picture ?? this.picture,
       );
 
-  factory ZaloProfileModel.fromJson(Map<dynamic, dynamic> json) =>
-      ZaloProfileModel(
+  factory ZaloProfileModel.fromJson(Map<dynamic, dynamic> json) => ZaloProfileModel(
         birthday: json["birthday"] == null ? null : json["birthday"],
         gender: json["gender"] == null ? null : json["gender"],
         name: json["name"] == null ? null : json["name"],
         id: json["id"] == null ? null : json["id"].toString(),
-        picture:
-            json["picture"] == null ? null : Picture.fromJson(json["picture"]),
+        picture: json["picture"] == null ? null : Picture.fromJson(json["picture"]),
       );
 
   Map<dynamic, dynamic> toJson() => {

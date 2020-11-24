@@ -116,10 +116,12 @@ V/ZaloLogin(28932): ------------------------------------------------------------
 Open `android/app/build.gradle` and edit
 
 ```gradle
+
 minSdkVersion 18 // or bigger
+
 ```
 
-### 4.2 Open to `/android/app/src/main/AndroidManifest.xml` and add config on bottom under flutterEmbedding
+### 4.2 Open to `/android/app/src/main/AndroidManifest.xml` and add config on bottom under `flutterEmbedding` block
 
 ```xml
     <application
@@ -179,7 +181,6 @@ package your.app.name;  // <-- replace this
 
 import io.flutter.app.FlutterApplication;
 import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugins.pathprovider.PathProviderPlugin
 import com.zing.zalo.zalosdk.oauth.ZaloSDKApplication;
 
 class MyApplication : FlutterApplication(), PluginRegistry.PluginRegistrantCallback {
@@ -187,11 +188,7 @@ class MyApplication : FlutterApplication(), PluginRegistry.PluginRegistrantCallb
     super.onCreate();
     ZaloSDKApplication.wrap(this);
   }
-  override fun registerWith(registry: PluginRegistry) {
-    if (!registry!!.hasPlugin("com.neun.flutter_zalo_login.flutter_zalo_login")) {
-        PathProviderPlugin.registerWith(registry!!.registrarFor("com.neun.flutter_zalo_login.flutter_zalo_login"))
-    }
-  }
+  override fun registerWith(registry: PluginRegistry) {}
 }
 ```
 

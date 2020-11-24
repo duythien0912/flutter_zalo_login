@@ -1,3 +1,7 @@
+## 0.1.7
+
+* [Thien] Fix bug on android
+
 ## 0.1.6
 
 * [Thien] Add kotlin code example
