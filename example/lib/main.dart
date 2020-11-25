@@ -206,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 VerticalDivider(),
-                if (zaloInfo != null)
+                if (zaloInfo != null && zaloInfo?.id != null)
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
