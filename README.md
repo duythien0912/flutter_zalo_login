@@ -327,3 +327,24 @@ Check folder `example/android` for java code version of
   return [[ZDKApplicationDelegate sharedInstance] application:application openURL:url options:options];
 }
 ```
+
+## 7. TODO LIST
+
+TODO: Lấy danh sách bạn bè
+More info: https://developers.zalo.me/docs/sdk/android-sdk/open-api/lay-danh-sach-ban-be-post-437
+
+TODO: Gửi tin nhắn tới bạn bè
+More info: https://developers.zalo.me/docs/sdk/android-sdk/open-api/gui-tin-nhan-toi-ban-be-post-1205
+
+TODO: Đăng bài viết
+More info: https://developers.zalo.me/docs/sdk/android-sdk/open-api/dang-bai-viet-post-1212
+
+TODO: Mời sử dụng ứng dụng
+More info: https://developers.zalo.me/docs/sdk/android-sdk/open-api/moi-su-dung-ung-dung-post-1218
+
+TODO: Gửi tin nhắn tới bạn bè
+More info: https://developers.zalo.me/docs/sdk/android-sdk/tuong-tac-voi-app-zalo/gui-tin-nhan-toi-ban-be-post-452
+Future shareMessage() async {}
+
+TODO: Đăng bài viết
+More info: https://developers.zalo.me/docs/sdk/android-sdk/tuong-tac-voi-app-zalo/dang-bai-viet-post-447

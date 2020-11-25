@@ -1,3 +1,9 @@
+## 0.1.9
+
+* [Thien] Fix bug wrong type on iOS
+* [Thien] Add code dart comment
+* [Thien] Add TODO list
+
 ## 0.1.8
 
 * [Thien] Fix bug ZaloSDK.Instance.authenticate not respones
