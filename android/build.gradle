@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    api "com.zing.zalo.zalosdk:core:+"
-    api "com.zing.zalo.zalosdk:auth:+"
-    api "com.zing.zalo.zalosdk:openapi:+"
+    api "com.zing.zalo.zalosdk:core:2.5.0819"
+    api "com.zing.zalo.zalosdk:auth:2.5.0819"
+    api "com.zing.zalo.zalosdk:openapi:2.5.0819"
 }
