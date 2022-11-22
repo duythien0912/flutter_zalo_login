@@ -1,14 +1,16 @@
 import 'dart:convert';
 
-ZaloLoginResult zaloLoginResultFromJson(String str) => ZaloLoginResult.fromJson(json.decode(str));
+ZaloLoginResult zaloLoginResultFromJson(String str) =>
+    ZaloLoginResult.fromJson(json.decode(str));
 
-String zaloLoginResultToJson(ZaloLoginResult data) => json.encode(data.toJson());
+String zaloLoginResultToJson(ZaloLoginResult data) =>
+    json.encode(data.toJson());
 
 class ZaloLoginResult {
-  String oauthCode;
-  String errorMessage;
-  int errorCode;
-  String userId;
+  String? oauthCode;
+  String? errorMessage;
+  int? errorCode;
+  String? userId;
 
   ZaloLoginResult({
     this.oauthCode,
@@ -18,10 +20,10 @@ class ZaloLoginResult {
   });
 
   ZaloLoginResult copyWith({
-    String oauthCode,
-    String errorMessage,
-    int errorCode,
-    String userId,
+    String? oauthCode,
+    String? errorMessage,
+    int? errorCode,
+    String? userId,
   }) =>
       ZaloLoginResult(
         oauthCode: oauthCode ?? this.oauthCode,
@@ -30,9 +32,11 @@ class ZaloLoginResult {
         userId: userId ?? this.userId,
       );
 
-  factory ZaloLoginResult.fromJson(Map<dynamic, dynamic> json) => ZaloLoginResult(
+  factory ZaloLoginResult.fromJson(Map<dynamic, dynamic> json) =>
+      ZaloLoginResult(
         oauthCode: json["oauthCode"] == null ? null : json["oauthCode"],
-        errorMessage: json["errorMessage"] == null ? null : json["errorMessage"],
+        errorMessage:
+            json["errorMessage"] == null ? null : json["errorMessage"],
         errorCode: json["errorCode"] == null ? null : json["errorCode"],
         userId: json["userId"] == null ? null : json["userId"].toString(),
       );

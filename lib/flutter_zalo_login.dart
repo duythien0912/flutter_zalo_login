@@ -43,7 +43,8 @@ class ZaloLogin {
 
   /// [isAuthenticated] will check is session out or not
   /// Ex: `bool isAuthenticated = await ZaloLogin().isAuthenticated();`
-  Future<bool> isAuthenticated() async => await channel.invokeMethod('isAuthenticated') == 1;
+  Future<bool> isAuthenticated() async =>
+      await channel.invokeMethod('isAuthenticated') == 1;
 
   /// [getInfo] will get account info from Zalo
   ///
