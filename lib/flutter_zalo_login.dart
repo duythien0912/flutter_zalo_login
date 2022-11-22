@@ -56,7 +56,7 @@ class ZaloLogin {
     await channel.invokeMethod('getInfo');
     final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
 
-    return ZaloProfileModel.fromJson(result ?? {});
+    return ZaloProfileModel.fromJson(result);
   }
 
   /// TODO: Lấy danh sách bạn bè
