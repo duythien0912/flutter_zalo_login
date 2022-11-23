@@ -1,9 +1,9 @@
 {
  "runtimeInfo": {
   "panaVersion": "0.13.8-dev",
-  "sdkVersion": "2.7.0",
+  "sdkVersion": "2.10.4",
   "flutterVersions": {
-   "frameworkVersion": "1.12.13+hotfix.8",
+   "frameworkVersion": "2.10.4",
    "channel": "unknown",
    "repositoryUrl": "unknown source",
    "frameworkRevision": "0b8abb4724aa590dd0f429683339b1e045a1594d",
@@ -20,7 +20,7 @@
   "version": "0.1.3",
   "homepage": "https://github.com/duythien0912/flutter_zalo_login",
   "environment": {
-   "sdk": ">=2.1.0 <3.0.0"
+   "sdk": ">=2.12.0 <3.0.0"
   },
   "dependencies": {
    "flutter": {
