@@ -43,7 +43,8 @@ class ZaloLogin {
 
   /// [isAuthenticated] will check is session out or not
   /// Ex: `bool isAuthenticated = await ZaloLogin().isAuthenticated();`
-  Future<bool> isAuthenticated() async => await channel.invokeMethod('isAuthenticated') == 1;
+  Future<bool> isAuthenticated() async =>
+      await channel.invokeMethod('isAuthenticated') == 1;
 
   /// [getInfo] will get account info from Zalo
   ///
@@ -55,7 +56,7 @@ class ZaloLogin {
     await channel.invokeMethod('getInfo');
     final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
 
-    return ZaloProfileModel.fromJson(result ?? {});
+    return ZaloProfileModel.fromJson(result);
   }
 
   /// TODO: Lấy danh sách bạn bè

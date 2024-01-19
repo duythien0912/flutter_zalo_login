@@ -1,15 +1,17 @@
 import 'dart:convert';
 
-ZaloProfileModel zaloProfileModelFromJson(String str) => ZaloProfileModel.fromJson(json.decode(str));
+ZaloProfileModel zaloProfileModelFromJson(String str) =>
+    ZaloProfileModel.fromJson(json.decode(str));
 
-String zaloProfileModelToJson(ZaloProfileModel data) => json.encode(data.toJson());
+String zaloProfileModelToJson(ZaloProfileModel data) =>
+    json.encode(data.toJson());
 
 class ZaloProfileModel {
-  String birthday;
-  String gender;
-  String name;
-  String id;
-  Picture picture;
+  String? birthday;
+  String? gender;
+  String? name;
+  String? id;
+  Picture? picture;
 
   ZaloProfileModel({
     this.birthday,
@@ -20,11 +22,11 @@ class ZaloProfileModel {
   });
 
   ZaloProfileModel copyWith({
-    String birthday,
-    String gender,
-    String name,
-    String id,
-    Picture picture,
+    String? birthday,
+    String? gender,
+    String? name,
+    String? id,
+    Picture? picture,
   }) =>
       ZaloProfileModel(
         birthday: birthday ?? this.birthday,
@@ -34,12 +36,14 @@ class ZaloProfileModel {
         picture: picture ?? this.picture,
       );
 
-  factory ZaloProfileModel.fromJson(Map<dynamic, dynamic> json) => ZaloProfileModel(
+  factory ZaloProfileModel.fromJson(Map<dynamic, dynamic> json) =>
+      ZaloProfileModel(
         birthday: json["birthday"] == null ? null : json["birthday"],
         gender: json["gender"] == null ? null : json["gender"],
         name: json["name"] == null ? null : json["name"],
         id: json["id"] == null ? null : json["id"].toString(),
-        picture: json["picture"] == null ? null : Picture.fromJson(json["picture"]),
+        picture:
+            json["picture"] == null ? null : Picture.fromJson(json["picture"]),
       );
 
   Map<dynamic, dynamic> toJson() => {
@@ -47,19 +51,19 @@ class ZaloProfileModel {
         "gender": gender == null ? null : gender,
         "name": name == null ? null : name,
         "id": id == null ? null : id,
-        "picture": picture == null ? null : picture.toJson(),
+        "picture": picture == null ? null : picture?.toJson(),
       };
 }
 
 class Picture {
-  Data data;
+  Data? data;
 
   Picture({
     this.data,
   });
 
   Picture copyWith({
-    Data data,
+    Data? data,
   }) =>
       Picture(
         data: data ?? this.data,
@@ -70,19 +74,19 @@ class Picture {
       );
 
   Map<dynamic, dynamic> toJson() => {
-        "data": data == null ? null : data.toJson(),
+        "data": data == null ? null : data?.toJson(),
       };
 }
 
 class Data {
-  String url;
+  String? url;
 
   Data({
     this.url,
   });
 
   Data copyWith({
-    String url,
+    String? url,
   }) =>
       Data(
         url: url ?? this.url,
