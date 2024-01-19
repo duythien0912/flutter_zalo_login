@@ -1,3 +1,7 @@
+## 0.1.10
+
+* [Thien] Update plugins from Dart 1 to Dart 3
+
 ## 0.1.9+1
 
 * [Thien] Downgrade zalosdk version to `2.5.0819` because dev mode auto enable on ver `2.6`
