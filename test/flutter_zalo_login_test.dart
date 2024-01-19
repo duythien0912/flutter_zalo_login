@@ -6,15 +6,17 @@ void main() {
   const MethodChannel channel = MethodChannel('flutter_zalo_login');
 
   TestWidgetsFlutterBinding.ensureInitialized();
+  final messenger =
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
 
   setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
+    messenger.setMockMethodCallHandler(channel, (MethodCall methodCall) async {
       return '42';
     });
   });
 
   tearDown(() {
-    channel.setMockMethodCallHandler(null);
+    messenger.setMockMethodCallHandler(channel, null);
   });
 
   test('getPlatformVersion', () async {

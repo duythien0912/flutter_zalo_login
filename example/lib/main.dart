@@ -1,7 +1,5 @@
 import 'dart:developer';
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zalo_login/flutter_zalo_login.dart';
 
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -27,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  ZaloProfileModel zaloInfo = ZaloProfileModel(
+  ZaloProfileModel? zaloInfo = ZaloProfileModel(
     birthday: "",
     gender: "",
     id: "",
@@ -35,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     picture: null,
   );
 
-  ZaloLoginResult zaloLoginResult = ZaloLoginResult(
+  ZaloLoginResult? zaloLoginResult = ZaloLoginResult(
     errorCode: -1,
     errorMessage: "",
     oauthCode: "",
@@ -107,18 +105,18 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 VerticalDivider(),
                 SizedBox(
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       "Init Zalo",
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: _initZalo,
-                    color: Theme.of(context).accentColor,
+                    // color: Theme.of(context).accentColor,
                   ),
                   width: 150,
                 ),
                 VerticalDivider(),
-                if (_hashKey != null)
+                if (_hashKey.isNotEmpty)
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,13 +136,13 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 VerticalDivider(),
                 SizedBox(
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       "Login Zalo",
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: _loginZalo,
-                    color: Theme.of(context).accentColor,
+                    // color: Theme.of(context).accentColor,
                   ),
                   width: 150,
                 ),
@@ -155,12 +153,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "oauthCode: " + zaloLoginResult.oauthCode.toString(),
+                          "oauthCode: " +
+                              (zaloLoginResult?.oauthCode.toString() ?? ''),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
-                        Text("errorCode: " + zaloLoginResult.errorCode.toString()),
-                        Text("userId: " + zaloLoginResult.userId),
+                        Text("errorCode: " +
+                            (zaloLoginResult?.errorCode.toString() ?? '')),
+                        Text("userId: " + (zaloLoginResult?.userId ?? '')),
                       ],
                     ),
                   ),
@@ -172,13 +172,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 VerticalDivider(),
                 SizedBox(
                   width: 150,
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       "Is Authenticated",
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: _isAuthenticated,
-                    color: Theme.of(context).accentColor,
+                    // color: Theme.of(context).accentColor,
                   ),
                 ),
                 VerticalDivider(),
@@ -196,13 +196,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 VerticalDivider(),
                 SizedBox(
                   width: 150,
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       "Get info",
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: _getInfo,
-                    color: Theme.of(context).accentColor,
+                    // color: Theme.of(context).accentColor,
                   ),
                 ),
                 VerticalDivider(),
@@ -211,18 +211,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        if (zaloInfo != null && zaloInfo.picture != null) Image.network(zaloInfo.picture.data.url),
+                        if (zaloInfo != null && zaloInfo?.picture != null)
+                          Image.network(zaloInfo?.picture?.data?.url ?? ''),
                         Text(
-                          "id: " + zaloInfo?.id,
+                          "id: " + (zaloInfo?.id ?? ''),
                         ),
                         Text(
-                          "name: " + zaloInfo?.name,
+                          "name: " + (zaloInfo?.name ?? ''),
                         ),
                         Text(
-                          "birthday: " + zaloInfo?.birthday,
+                          "birthday: " + (zaloInfo?.birthday ?? ''),
                         ),
                         Text(
-                          "gender: " + zaloInfo?.gender,
+                          "gender: " + (zaloInfo?.gender ?? ''),
                         ),
                       ],
                     ),
@@ -235,10 +236,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 VerticalDivider(),
                 SizedBox(
                   width: 150,
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text("Logout"),
                     onPressed: _logoutZalo,
-                    color: Theme.of(context).buttonColor,
+                    // color: Theme.of(context).buttonColor,
                   ),
                 ),
               ],
