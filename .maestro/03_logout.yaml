@@ -1,5 +1,5 @@
-# Step 5 logout: after login, Logout clears the session and step 3 then
-# reports not authenticated.
+# Step 5 logout: after login, Logout clears the session — the login details
+# affordance disappears and step 3 reports not authenticated.
 appId: ${APP_ID}
 ---
 - launchApp:
@@ -11,16 +11,21 @@ appId: ${APP_ID}
 
 - tapOn: "Login Zalo"
 - extendedWaitUntil:
-    visible: "Login success"
+    visible: "Details login"
     timeout: 120000
 
-# logout (step 5)
+# logout (step 5) clears the session
 - tapOn: "Logout"
 - extendedWaitUntil:
     visible: "Logged out"
     timeout: 10000
+- assertNotVisible: "Details login"
+
+# step 3 now reports not authenticated (via its details sheet)
 - tapOn: "Check Auth"
 - extendedWaitUntil:
-    visible: "Is Authenticated: false"
+    visible: "Details auth"
     timeout: 10000
+- tapOn: "Details auth"
+- assertVisible: "Is Authenticated: false"
 - takeScreenshot: 03_after_logout

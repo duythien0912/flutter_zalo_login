@@ -1,7 +1,11 @@
 # Steps 1 -> 2 -> 4: init, login (assumes a cached Zalo session so it returns
 # without a QR scan), then getUserInfo.
 #
-# Success == the "Got profile: <name>" toast (profile fetched with a real name).
+# Uses non-transient signals (the per-step Details affordances) instead of
+# transient toasts:
+#   - "Details login" appears once login returns a result
+#   - "Details profile" appears only when getUserInfo returns a valid profile
+# Reaching the "Profile (full data)" sheet == login + getUserInfo succeeded.
 appId: ${APP_ID}
 ---
 - launchApp:
@@ -11,19 +15,18 @@ appId: ${APP_ID}
     visible: "Init success"
     timeout: 10000
 
-# login — cached session returns immediately (no QR scan needed)
+# login — cached session returns without a QR scan
 - tapOn: "Login Zalo"
 - extendedWaitUntil:
-    visible: "Login success"
+    visible: "Details login"
     timeout: 120000
 - takeScreenshot: 02_logged_in
 
 # get profile
 - tapOn: "Get info"
 - extendedWaitUntil:
-    visible:
-      text: "Got profile: .+"
+    visible: "Details profile"
     timeout: 30000
-- takeScreenshot: 02_got_profile
-- assertVisible:
-    text: "Got profile: .+"
+- tapOn: "Details profile"
+- assertVisible: "Profile (full data)"
+- takeScreenshot: 02_profile

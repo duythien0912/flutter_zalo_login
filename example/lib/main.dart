@@ -198,6 +198,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 result: _inited ? 'hashKey: $_hashKey' : 'Get the Android hash key',
                 onCopy: _inited ? () => _copy('Hash key', _hashKey) : null,
                 onDetails: _inited ? () => _sheet('Android Hash Key', _hashKey) : null,
+                copyTooltip: 'Copy hash key',
+                detailsTooltip: 'Details hash key',
               ),
               // Step 2 — Login
               _StepTile(
@@ -215,6 +217,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         : 'Login with Zalo (app / QR / web)'),
                 onCopy: _loggedIn ? () => _copy('oauthCode', zaloLoginResult!.oauthCode ?? '') : null,
                 onDetails: loginJson != null ? () => _sheet('Login Result', loginJson) : null,
+                copyTooltip: 'Copy oauth code',
+                detailsTooltip: 'Details login',
               ),
               // Step 3 — Is Authenticated
               _StepTile(
@@ -228,6 +232,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 result: _authChecked
                     ? 'Is Authenticated: $_authenticated'
                     : 'Is Authenticated: (tap to check)',
+                detailsTooltip: 'Details auth',
+                onDetails: _authChecked
+                    ? () => _sheet('Is Authenticated: $_authenticated',
+                        'Checked via ZaloLogin().isAuthenticated()\nresult: $_authenticated')
+                    : null,
               ),
               // Step 4 — Get info
               _StepTile(
@@ -244,6 +253,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     : 'Get user profile',
                 onCopy: profileJson != null ? () => _copy('Profile', profileJson) : null,
                 onDetails: profileJson != null ? () => _sheet('Profile (full data)', profileJson) : null,
+                copyTooltip: 'Copy profile',
+                detailsTooltip: 'Details profile',
               ),
               // Step 5 — Logout
               _StepTile(
@@ -279,6 +290,8 @@ class _StepTile extends StatelessWidget {
     this.onCopy,
     this.onDetails,
     this.avatarUrl,
+    this.copyTooltip = 'Copy',
+    this.detailsTooltip = 'Details',
   });
 
   final int number;
@@ -292,6 +305,8 @@ class _StepTile extends StatelessWidget {
   final VoidCallback? onCopy;
   final VoidCallback? onDetails;
   final String? avatarUrl;
+  final String copyTooltip;
+  final String detailsTooltip;
 
   @override
   Widget build(BuildContext context) {
@@ -334,14 +349,14 @@ class _StepTile extends StatelessWidget {
                     visualDensity: VisualDensity.compact,
                     onPressed: onCopy,
                     icon: const Icon(Icons.copy, size: 18),
-                    tooltip: 'Copy',
+                    tooltip: copyTooltip,
                   ),
                 if (onDetails != null)
                   IconButton(
                     visualDensity: VisualDensity.compact,
                     onPressed: onDetails,
                     icon: const Icon(Icons.unfold_more, size: 20),
-                    tooltip: 'Details',
+                    tooltip: detailsTooltip,
                   ),
                 const SizedBox(width: 4),
                 SizedBox(

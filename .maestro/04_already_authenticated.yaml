@@ -1,5 +1,5 @@
 # Step 3 regression: after login, isAuthenticated() reports true
-# (previously stayed false).
+# (previously stayed false). Verified via the non-transient step-3 details sheet.
 appId: ${APP_ID}
 ---
 - launchApp:
@@ -11,11 +11,13 @@ appId: ${APP_ID}
 
 - tapOn: "Login Zalo"
 - extendedWaitUntil:
-    visible: "Login success"
+    visible: "Details login"
     timeout: 120000
 
 - tapOn: "Check Auth"
 - extendedWaitUntil:
-    visible: "Is Authenticated: true"
+    visible: "Details auth"
     timeout: 10000
+- tapOn: "Details auth"
+- assertVisible: "Is Authenticated: true"
 - takeScreenshot: 04_authenticated

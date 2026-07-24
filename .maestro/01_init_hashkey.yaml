@@ -1,14 +1,14 @@
 # Step 1: init returns the Android hash key. Login-independent.
-# Verifies via the success toast and the hash-key details sheet.
 appId: ${APP_ID}
 ---
 - launchApp:
     clearState: true
-- assertVisible: "1. Init"
 - tapOn: "Init Zalo"
+# init toast fires immediately (instant action → reliable)
 - extendedWaitUntil:
     visible: "Init success"
     timeout: 10000
-- tapOn: "Details"
+# non-transient proof: the hash-key details sheet
+- tapOn: "Details hash key"
 - assertVisible: "Android Hash Key"
 - takeScreenshot: 01_init_hashkey
