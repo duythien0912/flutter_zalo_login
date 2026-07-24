@@ -53,7 +53,6 @@ class ZaloLogin {
   /// More info: https://developers.zalo.me/docs/sdk/ios-sdk/open-api/lay-thong-tin-profile-post-490
   ///
   Future<ZaloProfileModel> getInfo() async {
-    await channel.invokeMethod('getInfo');
     final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
 
     return ZaloProfileModel.fromJson(result);

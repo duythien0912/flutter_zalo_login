@@ -1,40 +1,49 @@
-group 'com.neun.flutter_zalo_login.flutter_zalo_login'
-version '1.0'
+group = "com.neun.flutter_zalo_login.flutter_zalo_login"
+version = "1.0"
 
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "com.android.tools.build:gradle:8.7.0"
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
-apply plugin: 'com.android.library'
+apply plugin: "com.android.library"
 
 android {
-    compileSdkVersion 28
+    namespace = "com.neun.flutter_zalo_login.flutter_zalo_login"
+    compileSdk = 35
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 
     defaultConfig {
-        minSdkVersion 18
+        minSdk = 21
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
-        disable 'InvalidPackage'
+
+    lint {
+        disable "InvalidPackage"
     }
 }
 
 dependencies {
-    api "com.zing.zalo.zalosdk:core:2.5.0819"
-    api "com.zing.zalo.zalosdk:auth:2.5.0819"
-    api "com.zing.zalo.zalosdk:openapi:2.5.0819"
+    // Zalo SDK v4 (Maven Central, group `me.zalo`). jcenter is dead.
+    // sdk-openapi transitively pulls sdk-auth + sdk-core.
+    api "me.zalo:sdk-openapi:4.2.0724"
+    api "me.zalo:sdk-auth:4.2.0724"
+    api "me.zalo:sdk-core:4.2.0724"
 }

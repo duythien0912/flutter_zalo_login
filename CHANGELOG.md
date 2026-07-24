@@ -1,3 +1,18 @@
+## 0.2.0
+
+* Migrate Android Zalo SDK from dead jcenter `com.zing.zalo.zalosdk:*:2.5.0819`
+  to Maven Central `me.zalo:sdk-*:4.2.0724` (SDK v4).
+* Rewrite Android native plugin for the v4 OAuth **PKCE** flow
+  (`code_challenge` / `code_verifier`, access-token exchange before profile).
+* Update iOS to `ZaloSDK ~> 4.1` (xcframework), deployment target 12.0.
+* Modernize Android toolchain: AGP 8.5.2, Gradle 8.9, compileSdk 35,
+  minSdk 21, Java 17, namespace, `jcenter()` → `mavenCentral()`,
+  plugins-DSL `settings.gradle`.
+* Modernize iOS example Podfile to the current Flutter template.
+* Bump Dart SDK constraint to `>=3.4.0 <4.0.0`, Flutter `>=3.22.0`.
+* Fix double method-channel invocation in `ZaloLogin.getInfo()`.
+* Add Maestro E2E flow for the example app.
+
 ## 0.1.10
 
 * [Thien] Update plugins from Dart 1 to Dart 3

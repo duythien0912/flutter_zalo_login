@@ -111,13 +111,17 @@ V/ZaloLogin(28932): ------------------------------------------------------------
 
 # 4. Setup for Android Kotlin
 
-### 4.1 This plugin need minSdkVersion > 18 for working
+### 4.1 This plugin needs minSdkVersion >= 21 for working
+
+> As of `0.2.0` the Android side uses Zalo SDK v4 (`me.zalo:sdk-*` on Maven
+> Central) with the OAuth **PKCE** flow, AGP 8, Gradle 8.9 and compileSdk 35.
+> iOS uses `ZaloSDK ~> 4.1` with deployment target 12.0.
 
 Open `android/app/build.gradle` and edit
 
 ```gradle
 
-minSdkVersion 18 // or bigger
+minSdkVersion 21 // or bigger
 
 ```
 

@@ -1,0 +1,26 @@
+# Step 5 logout: after login, Logout clears the session and step 3 then
+# reports not authenticated.
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+- tapOn: "Init Zalo"
+- extendedWaitUntil:
+    visible: "Init success"
+    timeout: 10000
+
+- tapOn: "Login Zalo"
+- extendedWaitUntil:
+    visible: "Login success"
+    timeout: 120000
+
+# logout (step 5)
+- tapOn: "Logout"
+- extendedWaitUntil:
+    visible: "Logged out"
+    timeout: 10000
+- tapOn: "Check Auth"
+- extendedWaitUntil:
+    visible: "Is Authenticated: false"
+    timeout: 10000
+- takeScreenshot: 03_after_logout

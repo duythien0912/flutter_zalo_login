@@ -1,0 +1,29 @@
+# Steps 1 -> 2 -> 4: init, login (assumes a cached Zalo session so it returns
+# without a QR scan), then getUserInfo.
+#
+# Success == the "Got profile: <name>" toast (profile fetched with a real name).
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+- tapOn: "Init Zalo"
+- extendedWaitUntil:
+    visible: "Init success"
+    timeout: 10000
+
+# login — cached session returns immediately (no QR scan needed)
+- tapOn: "Login Zalo"
+- extendedWaitUntil:
+    visible: "Login success"
+    timeout: 120000
+- takeScreenshot: 02_logged_in
+
+# get profile
+- tapOn: "Get info"
+- extendedWaitUntil:
+    visible:
+      text: "Got profile: .+"
+    timeout: 30000
+- takeScreenshot: 02_got_profile
+- assertVisible:
+    text: "Got profile: .+"
